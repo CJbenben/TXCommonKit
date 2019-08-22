@@ -15,5 +15,6 @@
 #import "ZSHTool.h"
 #import "CJGlobalDefine.h"
 #import "CJDefaultTool.h"
+#import "CJAppSystemInfo.h"
 
 #endif /* CJCommonKit_h */

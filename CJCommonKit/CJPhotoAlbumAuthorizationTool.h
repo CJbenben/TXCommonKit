@@ -1,15 +1,15 @@
 //
-//  AtzuchePhotoAlbumAuthorizationTool.h
+//  CJPhotoAlbumAuthorizationTool.h
 //  Autoyol
 //
-//  Created by fanxiao on 2017/7/17.
+//  Created by chenxioajie on 2017/7/17.
 //  Copyright © 2017年 Autoyol. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /** @brief 摄像头和相册相关的公共类 */
-@interface AtzuchePhotoAlbumAuthorizationTool : NSObject
+@interface CJPhotoAlbumAuthorizationTool : NSObject
 
 // 相机权限判断
 + (BOOL)isPhotoAuthorization;

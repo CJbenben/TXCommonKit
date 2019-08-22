@@ -1,16 +1,16 @@
 //
-//  AtzuchePhotoAlbumAuthorizationTool.m
+//  CJPhotoAlbumAuthorizationTool.m
 //  Autoyol
 //
-//  Created by fanxiao on 2017/7/17.
+//  Created by chenxiaojie on 2017/7/17.
 //  Copyright © 2017年 Autoyol. All rights reserved.
 //
 
-#import "AtzuchePhotoAlbumAuthorizationTool.h"
+#import "CJPhotoAlbumAuthorizationTool.h"
 #import <Photos/Photos.h>
 //#import <AssetsLibrary/AssetsLibrary.h>
 
-@implementation AtzuchePhotoAlbumAuthorizationTool
+@implementation CJPhotoAlbumAuthorizationTool
 
 // 相机权限判断
 + (BOOL)isPhotoAuthorization
@@ -18,7 +18,7 @@
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus == AVAuthorizationStatusDenied || authStatus == AVAuthorizationStatusRestricted) {
         // 没有权限。弹出alertView
-        [AtzuchePhotoAlbumAuthorizationTool showPhotoAlert];
+        [CJPhotoAlbumAuthorizationTool showPhotoAlert];
         return NO;
     }else{
         //获取了权限，直接调用相机接口
@@ -42,7 +42,7 @@
 //    else {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         if (status == PHAuthorizationStatusDenied || status == PHAuthorizationStatusRestricted) {
-            [AtzuchePhotoAlbumAuthorizationTool showAlbumAlert];
+            [CJPhotoAlbumAuthorizationTool showAlbumAlert];
             return NO;
         } return YES;
 //    }

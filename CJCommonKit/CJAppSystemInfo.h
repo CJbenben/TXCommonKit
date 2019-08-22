@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getCurrentDeviceModel;
 
++ (NSDictionary *)getIPAddresses;
+
 @end
 
 NS_ASSUME_NONNULL_END

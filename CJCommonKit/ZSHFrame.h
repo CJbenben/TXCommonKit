@@ -21,5 +21,5 @@
 #define SCREEN_WIDTH_QUARTER    SCREEN_WIDTH/4.0
 
 
-#define naviHeight              (SCREEN_HEIGHT == 812.0 ? 88 : 64)
+#define naviHeight              ((SCREEN_HEIGHT == 812.0 || 896) ? 88 : 64)
 #define iPadNaviHeight          80

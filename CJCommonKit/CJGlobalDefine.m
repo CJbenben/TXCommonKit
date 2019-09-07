@@ -8,7 +8,7 @@
 
 #import "CJGlobalDefine.h"
 
-SPHK_EXTERN id safeObjectAtIndex(NSArray *arr, NSInteger index)
+SPHK_EXTERN id safeObjectTxAtIndex(NSArray *arr, NSInteger index)
 {
     if (IsArrEmpty(arr)) {
         //        AtzucheAssert(!IsArrEmpty(arr));

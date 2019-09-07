@@ -68,7 +68,7 @@ typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);
 //----------------------------------------------------------------------------------------------
 
 
-SPHK_EXTERN id           safeObjectAtIndex(NSArray *arr, NSInteger index);
+SPHK_EXTERN id           safeObjectTxAtIndex(NSArray *arr, NSInteger index);
 SPHK_EXTERN NSString     * EncodeStringFromDic(NSDictionary *dic, NSString *key);
 SPHK_EXTERN NSArray      * EncodeArrayFromDic(NSDictionary *dic, NSString *key);
 SPHK_EXTERN NSDictionary * EncodeDicFromDic(NSDictionary *dic, NSString *key);

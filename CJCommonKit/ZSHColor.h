@@ -20,5 +20,9 @@
 #define HEX_RGB(V)                      [UIColor colorWithRGBHex:V]
 #define HEX_RGBA(V, A)                  [UIColor colorWithRGBHex:V alpha:A]
 
+/* CGColor */
+#define CG_RGBCOLOR(r,g,b)              [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0].CGColor
+#define CG_RGBACOLOR(r,g,b,a)           [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:a].CGColor
+
 /* 随机色 */
 #define RandomColor                     RGBCOLOR(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))

@@ -12,6 +12,8 @@
  
 #endif /* ZSHTool_h */
 
+#define IOS13_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.0)
+#define IOS12_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0)
 #define IOS11_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
 #define IOS10_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define IOS9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -24,6 +26,8 @@
 
 #define IS_IPAD         ((UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad))
 #define IS_IPADz         ([(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) intValue])
+
+#define IS_IPHONE_11 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define IS_IPHONE_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
 

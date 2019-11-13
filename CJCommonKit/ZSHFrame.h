@@ -20,6 +20,12 @@
 /* 获取设备的物理宽度四分之一 */
 #define SCREEN_WIDTH_QUARTER    SCREEN_WIDTH/4.0
 
+#define isQiLiuHai \
+({BOOL qiLiuHai = NO;\
+if (@available(iOS 11.0, *)) {\
+qiLiuHai = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(qiLiuHai);})
 
-#define naviHeight              ((SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 88 : 64)
+#define naviHeight              (isQiLiuHai ? 88 : 64)
 #define iPadNaviHeight          80

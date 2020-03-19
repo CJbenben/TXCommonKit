@@ -58,6 +58,14 @@
 #define CJLog(...)
 #endif
 
-//保留两位有效数字加￥符
-#define RMB(priceStr)           [NSString stringWithFormat:@"￥%.2f", priceStr.floatValue]
+// 整数价格只显示整数，小数价格保留两位有效数字
+#define RMB(priceStr) \
+({NSString *price = priceStr;\
+if (price.floatValue == price.intValue) {\
+price = [NSString stringWithFormat:@"￥%.0f", price.floatValue];\
+}\
+else {\
+price = [NSString stringWithFormat:@"￥%.2f", price.floatValue];\
+}\
+(price);})
 

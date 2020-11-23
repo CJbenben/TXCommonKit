@@ -1,22 +1,20 @@
 //
-//  ZSHFont.h
+//  CJFont.h
 //  DP
 //
 //  Created by cxj on 17/07/05.
 //  Copyright © 2015年 笨笨编程. All rights reserved.
 //
 
-#ifndef ZSHFont_h
-#define ZSHFont_h
+#ifndef CJFont_h
+#define CJFont_h
 
 
-#endif /* ZSHFont_h */
+#endif /* CJFont_h */
 
 #define FONTSTYLE_PingFangSC_Light ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Light" : @"Helvetica-Light")
 #define FONTSTYLE_PingFangSC_Medium ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Medium" : @"Helvetica-Bold")
 #define FONTSTYLE_PingFangSC_Regular ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"Helvetica")
-
-
 
 #define COMMON_FONT(F) [UIFont systemFontOfSize:F]
 
@@ -34,8 +32,3 @@
 #define FONT20 COMMON_FONT(20)
 #define FONT21 COMMON_FONT(21)
 #define FONT22 COMMON_FONT(22)
-
-// 计算字符串size
-#define SG_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
-
-#define SG_MULTILINE_TEXTSIZE(text, font, maxSize) [text length] > 0 ? [text boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;

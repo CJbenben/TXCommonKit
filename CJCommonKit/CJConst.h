@@ -1,17 +1,42 @@
 //
-//  ZSHTool.h
-//  DP
+//  CJConst.h
+//  Demo
 //
-//  Created by 笨笨编程 on 2017/7/5.
-//  Copyright © 2017年 dp. All rights reserved.
+//  Created by chenxiaojie on 2020/11/23.
+//  Copyright © 2020 ChenJie. All rights reserved.
 //
 
-#ifndef ZSHTool_h
-#define ZSHTool_h
+#ifndef CJConst_h
+#define CJConst_h
 
- 
-#endif /* ZSHTool_h */
 
+#endif /* CJConst_h */
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define kAPPDelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
+
+#pragma mark - Block functions Block 相关
+
+///block 声明
+#ifdef NS_BLOCKS_AVAILABLE
+typedef void (^AtzucheBasicBlock)(void);
+typedef void (^AtzucheOperationCallBackBlock)(BOOL isSuccess, NSString *errorMsg);
+typedef void (^AtzucheCallBackBlockWithResult)(BOOL isSuccess, NSString *errorCode, NSString *errorMsg, id result);
+typedef void (^AtzucheArrayBlock)(NSArray *list);
+
+typedef void (^AtzucheStrBlock)(NSString *str);
+typedef void (^AtzucheIntBlock)(NSInteger count);
+typedef void (^AtzucheDictBlock)(NSDictionary *dic);
+
+typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);
+
+
+#endif
+
+
+#define IOS14_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 14.0)
 #define IOS13_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.0)
 #define IOS12_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0)
 #define IOS11_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
@@ -42,30 +67,4 @@
 #define IS_IPHONE_5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define IS_IPHONE_4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-
-
-
-#define WeakSelf __weak typeof(self) weakSelf = self;
-
-/* 隐藏键盘 */
-#define HidenKeybord {[[[UIApplication sharedApplication] keyWindow] endEditing:YES];}
-
-
-#ifdef DEBUG
-#define CJString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent
-#define CJLog(...) printf("%s: %s 第%d行: %s\n\n",[[NSString lr_stringDate] UTF8String], [LRString UTF8String] ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
-#else
-#define CJLog(...)
-#endif
-
-// 整数价格只显示整数，小数价格保留两位有效数字
-#define RMB(priceStr) \
-({NSString *price = priceStr;\
-if (price.floatValue == price.intValue) {\
-price = [NSString stringWithFormat:@"￥%.0f", price.floatValue];\
-}\
-else {\
-price = [NSString stringWithFormat:@"￥%.2f", price.floatValue];\
-}\
-(price);})
 

@@ -21,11 +21,11 @@
 
 @implementation CJAppSystemInfo
 
+// 获取设备型号然后手动转化为对应名称 参考文章：https://www.jianshu.com/p/b23016bb97af
 + (NSString *)getCurrentDeviceModel {
     struct utsname systemInfo;
     uname(&systemInfo);
-    
-    NSString *deviceModel = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
+    NSString *deviceModel = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
     if ([deviceModel isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
     if ([deviceModel isEqualToString:@"iPhone3,2"])    return @"iPhone 4";
@@ -43,20 +43,24 @@
     if ([deviceModel isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
     if ([deviceModel isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
     // 日行两款手机型号均为日本独占，可能使用索尼FeliCa支付方案而不是苹果支付
-    if ([deviceModel isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
-    if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
-    if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
-    if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
-    if ([deviceModel isEqualToString:@"iPhone10,1"])   return @"iPhone_8";
-    if ([deviceModel isEqualToString:@"iPhone10,4"])   return @"iPhone_8";
-    if ([deviceModel isEqualToString:@"iPhone10,2"])   return @"iPhone_8_Plus";
-    if ([deviceModel isEqualToString:@"iPhone10,5"])   return @"iPhone_8_Plus";
-    if ([deviceModel isEqualToString:@"iPhone10,3"])   return @"iPhone X";
-    if ([deviceModel isEqualToString:@"iPhone10,6"])   return @"iPhone X";
-    if ([deviceModel isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
+    if ([deviceModel isEqualToString:@"iPhone9,1"])    return @"国行、日版、港行iPhone 7";
+    if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"港行、国行iPhone 7 Plus";
+    if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"美版、台版iPhone 7";
+    if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"美版、台版iPhone 7 Plus";
+    if ([deviceModel isEqualToString:@"iPhone10,1"])   return @"国行(A1863)、日行(A1906)iPhone 8";
+    if ([deviceModel isEqualToString:@"iPhone10,4"])   return @"美版(Global/A1905)iPhone 8";
+    if ([deviceModel isEqualToString:@"iPhone10,2"])   return @"国行(A1864)、日行(A1898)iPhone 8 Plus";
+    if ([deviceModel isEqualToString:@"iPhone10,5"])   return @"美版(Global/A1897)iPhone 8 Plus";
+    if ([deviceModel isEqualToString:@"iPhone10,3"])   return @"国行(A1865)、日行(A1902)iPhone X";
+    if ([deviceModel isEqualToString:@"iPhone10,6"])   return @"美版(Global/A1901)iPhone X";
     if ([deviceModel isEqualToString:@"iPhone11,2"])   return @"iPhone XS";
-    if ([deviceModel isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
     if ([deviceModel isEqualToString:@"iPhone11,4"])   return @"iPhone XS Max";
+    if ([deviceModel isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
+    if ([deviceModel isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
+    if ([deviceModel isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
+    if ([deviceModel isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
+    if ([deviceModel isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
+    
     if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
     if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
@@ -93,12 +97,29 @@
     if ([deviceModel isEqualToString:@"iPad6,4"])      return @"iPad Pro 9.7";
     if ([deviceModel isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9";
     if ([deviceModel isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9";
+    if ([deviceModel isEqualToString:@"iPad6,11"])    return @"iPad 5 (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad6,12"])    return @"iPad 5 (Cellular)";
+    if ([deviceModel isEqualToString:@"iPad7,1"])     return @"iPad Pro 12.9 inch 2nd gen (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad7,2"])     return @"iPad Pro 12.9 inch 2nd gen (Cellular)";
+    if ([deviceModel isEqualToString:@"iPad7,3"])     return @"iPad Pro 10.5 inch (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad7,4"])     return @"iPad Pro 10.5 inch (Cellular)";
+    if ([deviceModel isEqualToString:@"iPad7,5"])     return @"iPad 6th generation";
+    if ([deviceModel isEqualToString:@"iPad7,6"])     return @"iPad 6th generation";
+    if ([deviceModel isEqualToString:@"iPad8,1"])     return @"iPad Pro (11-inch)";
+    if ([deviceModel isEqualToString:@"iPad8,2"])     return @"iPad Pro (11-inch)";
+    if ([deviceModel isEqualToString:@"iPad8,3"])     return @"iPad Pro (11-inch)";
+    if ([deviceModel isEqualToString:@"iPad8,4"])     return @"iPad Pro (11-inch)";
+    if ([deviceModel isEqualToString:@"iPad8,5"])     return @"iPad Pro (12.9-inch) (3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad8,6"])     return @"iPad Pro (12.9-inch) (3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad8,7"])     return @"iPad Pro (12.9-inch) (3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad8,8"])     return @"iPad Pro (12.9-inch) (3rd generation)";
+
     
-    if ([deviceModel isEqualToString:@"AppleTV2,1"])      return @"Apple TV 2";
-    if ([deviceModel isEqualToString:@"AppleTV3,1"])      return @"Apple TV 3";
-    if ([deviceModel isEqualToString:@"AppleTV3,2"])      return @"Apple TV 3";
-    if ([deviceModel isEqualToString:@"AppleTV5,3"])      return @"Apple TV 4";
-    
+   if ([deviceModel isEqualToString:@"AppleTV2,1"])    return @"Apple TV 2";
+   if ([deviceModel isEqualToString:@"AppleTV3,1"])    return @"Apple TV 3";
+   if ([deviceModel isEqualToString:@"AppleTV3,2"])    return @"Apple TV 3";
+   if ([deviceModel isEqualToString:@"AppleTV5,3"])    return @"Apple TV 4";
+
     if ([deviceModel isEqualToString:@"i386"])         return @"Simulator";
     if ([deviceModel isEqualToString:@"x86_64"])       return @"Simulator";
     return deviceModel;

@@ -1,5 +1,5 @@
 //
-//  SPHKGlobalDefine.h
+//  CJGlobalDefine.h
 //  Autoyol
 //
 //  Created by chenxiaojie on 18/11/14.
@@ -7,30 +7,10 @@
 //
 #import <Foundation/Foundation.h>
 
-#ifndef Autoyol_AtzucheGlobalDefine_h
-#define Autoyol_AtzucheGlobalDefine_h
-
-
-#pragma mark - Block functions Block 相关
-
-///block 声明
-#ifdef NS_BLOCKS_AVAILABLE
-typedef void (^AtzucheBasicBlock)(void);
-typedef void (^AtzucheOperationCallBackBlock)(BOOL isSuccess, NSString *errorMsg);
-typedef void (^AtzucheCallBackBlockWithResult)(BOOL isSuccess, NSString *errorCode,NSString *errorMsg,id result);
-typedef void (^AtzucheArrayBlock)(NSArray *list);
-
-typedef void (^AtzucheStrBlock)(NSString *str);
-typedef void (^AtzucheIntBlock)(NSInteger count);
-typedef void (^AtzucheDictBlock)(NSDictionary *dic);
-
-typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);
-
-
-#endif
+#ifndef CJGlobalDefine_h
+#define CJGlobalDefine_h
 
 #pragma mark - Extern and Inline  functions 内联函数  外联函数
-
 /*／Atzuche_EXTERN 外联函数*/
 #if !defined(SPHK_EXTERN)
 #  if defined(__cplusplus)
@@ -53,6 +33,7 @@ typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);
 #  define Atzuche_INLINE static
 # endif
 #endif
+
 //----------------------------------------------------------------------------------------------
 #pragma mark - Nil or NULL 为空判断
 //是否为空或是[NSNull null]
@@ -67,14 +48,11 @@ typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);
 
 //----------------------------------------------------------------------------------------------
 
-
 SPHK_EXTERN id           safeObjectTxAtIndex(NSArray *arr, NSInteger index);
 SPHK_EXTERN NSString     * EncodeStringFromDic(NSDictionary *dic, NSString *key);
 SPHK_EXTERN NSArray      * EncodeArrayFromDic(NSDictionary *dic, NSString *key);
 SPHK_EXTERN NSDictionary * EncodeDicFromDic(NSDictionary *dic, NSString *key);
 SPHK_EXTERN void EncodeUnEmptyStrObjctToDic(NSMutableDictionary *dic,NSString *object, NSString *key);
 SPHK_EXTERN void EncodeUnEmptyObjctToDic(NSMutableDictionary *dic,id object, NSString *key);
-
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #endif

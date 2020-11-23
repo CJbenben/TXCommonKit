@@ -1,5 +1,5 @@
 //
-//  SPHKGlobalDefine.m
+//  CJGlobalDefine.m
 //  Autoyol
 //
 //  Created by chenxiaojie on 18/11/14.

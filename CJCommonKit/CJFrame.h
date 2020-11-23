@@ -1,15 +1,15 @@
 //
-//  ZSHFrame.h
+//  CJFrame.h
 //  DP
 //
 //  Created by 笨笨编程 on 2017/7/5.
 //  Copyright © 2017年 dp. All rights reserved.
 //
 
-#ifndef ZSHFrame_h
-#define ZSHFrame_h
+#ifndef CJFrame_h
+#define CJFrame_h
 
-#endif /* ZSHFrame_h */
+#endif /* CJFrame_h */
 
 /* 获取设备的物理宽度 */
 #define SCREEN_WIDTH            [UIScreen mainScreen].bounds.size.width

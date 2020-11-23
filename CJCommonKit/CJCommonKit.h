@@ -8,13 +8,15 @@
 #ifndef CJCommonKit_h
 #define CJCommonKit_h
 
-#import "ZSHAppInfo.h"
-#import "ZSHColor.h"
-#import "ZSHFont.h"
-#import "ZSHFrame.h"
-#import "ZSHTool.h"
-#import "CJGlobalDefine.h"
-#import "CJDefaultTool.h"
 #import "CJAppSystemInfo.h"
+#import "CJConst.h"
+#import "CJDefaultTool.h"
+#import "CJGlobalDefine.h"
+#import "CJPhotoAlbumAuthorizationTool.h"
+#import "CJAppInfo.h"
+#import "CJColor.h"
+#import "CJFont.h"
+#import "CJFrame.h"
+#import "CJTool.h"
 
 #endif /* CJCommonKit_h */

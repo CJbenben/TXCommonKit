@@ -12,7 +12,7 @@
 #import "CJConst.h"
 #import "CJDefaultTool.h"
 #import "CJGlobalDefine.h"
-#import "CJPhotoAlbumAuthorizationTool.h"
+#import "CJPrivacyPermissionsTool.h"
 #import "CJAppInfo.h"
 #import "CJColor.h"
 #import "CJFont.h"

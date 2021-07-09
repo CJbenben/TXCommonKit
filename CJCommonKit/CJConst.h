@@ -28,6 +28,7 @@ typedef void (^AtzucheArrayBlock)(NSArray *list);
 
 typedef void (^AtzucheStrBlock)(NSString *str);
 typedef void (^AtzucheIntBlock)(NSInteger count);
+typedef void (^AtzucheFloatBlock)(CGFloat value);
 typedef void (^AtzucheDictBlock)(NSDictionary *dic);
 
 typedef void (^AtzucheCallBackFailed)(NSString *errorCode,NSString *errorMsg);

@@ -9,6 +9,8 @@
 #import <sys/utsname.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
+#import <UIKit/UIKit.h>
+#import "TXAppInfo.h"
 
 #import <ifaddrs.h>
 #import <arpa/inet.h>
@@ -157,5 +159,68 @@
     }
     return @"0.0.0.0";
 }
+
+/*
+ @brief 获取设备唯一标识，非udid，但是可以保证唯一性（卸载重新安装也是唯一）
+ @return   设备唯一标识
+ */
++ (NSString *)getDeviceUniqueId {
+    /*为保证唯一性此处把udid保存在系统的 keychain中，防止用户卸载app重新安装后uuid改变导致无法获取系统消息列表*/
+    NSMutableDictionary *uuidDict = (NSMutableDictionary *)[self load:AppBundleIdentifier];
+    NSString *UUID = [uuidDict objectForKey:@"www.szgreenleaf.com.LYHM.appuuid"];
+    
+    if (UUID == nil || UUID.length == 0) {
+        /*没有获取到，获取一次UUID保存到keychain中*/
+        NSString * currentUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        UUID = currentUUID;
+        NSMutableDictionary *saveDict = [NSMutableDictionary dictionary];
+        [saveDict setObject:currentUUID forKey:@"www.szgreenleaf.com.LYHM.appuuid"];
+        [self save:AppBundleIdentifier data:saveDict];
+    }
+    
+    return UUID;
+}
+
++ (void)save:(NSString *)service data:(id)data {
+    //Get search dictionary
+    NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
+    //Delete old item before add new item
+    SecItemDelete((__bridge_retained CFDictionaryRef)keychainQuery);
+    //Add new object to search dictionary(Attention:the data format)
+    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:(__bridge_transfer id)kSecValueData];
+    //Add item to keychain with the search dictionary
+    SecItemAdd((__bridge_retained CFDictionaryRef)keychainQuery, NULL);
+    
+    CFRelease((__bridge CFTypeRef)(keychainQuery));
+}
+
++ (id)load:(NSString *)service {
+    id ret = nil;
+    NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
+    //Configure the search setting
+    [keychainQuery setObject:(id)kCFBooleanTrue forKey:(__bridge_transfer id)kSecReturnData];
+    [keychainQuery setObject:(__bridge_transfer id)kSecMatchLimitOne forKey:(__bridge_transfer id)kSecMatchLimit];
+    CFDataRef keyData = NULL;
+    if (SecItemCopyMatching((__bridge_retained CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr) {
+        @try {
+            ret = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge_transfer NSData *)keyData];
+        } @catch (NSException *e) {
+            NSLog(@"Unarchive of %@ failed: %@", service, e);
+        } @finally {
+        }
+    }
+    CFRelease((__bridge CFTypeRef)(keychainQuery));
+    return ret;
+}
+
++ (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
+    return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+            (__bridge_transfer id)kSecClassGenericPassword,(__bridge_transfer id)kSecClass,
+            service, (__bridge_transfer id)kSecAttrService,
+            service, (__bridge_transfer id)kSecAttrAccount,
+            (__bridge_transfer id)kSecAttrAccessibleAfterFirstUnlock,(__bridge_transfer id)kSecAttrAccessible,
+            nil];
+}
+
 
 @end

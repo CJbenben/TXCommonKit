@@ -16,6 +16,8 @@
 #define AppVersion              [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 /** APP BUILD 版本号 */
 #define AppBuildVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+/** APP bundleId */
+#define AppBundleIdentifier     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]
 /** APP名字 */
 #define AppDisplayName          [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]
 /** 当前语言 */

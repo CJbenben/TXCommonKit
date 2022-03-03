@@ -23,6 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getNetworkIPAddress;
 
+/*
+ @brief 获取设备唯一标识，非udid，但是可以保证唯一性（卸载重新安装也是唯一）
+ @return   设备唯一标识
+ */
++ (NSString *)getDeviceUniqueId;
+
 @end
 
 NS_ASSUME_NONNULL_END

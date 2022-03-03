@@ -1,14 +1,14 @@
 //
-//  DefaultTool.m
+//  TXDefaultTool.m
 //  NewEquery
 //
 //  Created by Jayden on 2017/9/12.
 //  Copyright © 2017年 benning. All rights reserved.
 //
 
-#import "CJDefaultTool.h"
+#import "TXDefaultTool.h"
 
-@implementation CJDefaultTool
+@implementation TXDefaultTool
 
 + (void)setDefaultsValue:(id)value for:(NSString *)key{
     [self removeValueForKey:key];

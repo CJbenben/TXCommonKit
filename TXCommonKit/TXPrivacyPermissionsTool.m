@@ -1,18 +1,18 @@
 //
-//  CJPrivacyPermissionsTool.m
+//  TXPrivacyPermissionsTool.m
 //  Autoyol
 //
 //  Created by chenxiaojie on 2017/7/17.
 //  Copyright © 2017年 Autoyol. All rights reserved.
 //
 
-#import "CJPrivacyPermissionsTool.h"
+#import "TXPrivacyPermissionsTool.h"
 #import <Photos/Photos.h>
 #import <CoreLocation/CLLocationManager.h>
 #import <Contacts/Contacts.h>
 #import <ContactsUI/ContactsUI.h>
 
-@implementation CJPrivacyPermissionsTool
+@implementation TXPrivacyPermissionsTool
 
 #define kCameraTitle        @"相机权限未开启"
 #define kCameraMessage      @"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关，开启相机功能"

@@ -1,16 +1,16 @@
 //
-//  CJAppInfo.h
+//  TXAppInfo.h
 //  DP
 //
 //  Created by 笨笨编程 on 2017/7/5.
 //  Copyright © 2017年 cxj. All rights reserved.
 //
 
-#ifndef CJAppInfo_h
-#define CJAppInfo_h
+#ifndef TXAppInfo_h
+#define TXAppInfo_h
 
 
-#endif /* CJAppInfo_h */
+#endif /* TXAppInfo_h */
 
 /** APP版本号 */
 #define AppVersion              [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

@@ -1,5 +1,5 @@
 //
-//  CJAppSystemInfo.h
+//  TXAppSystemInfo.h
 //  AFNetworking
 //
 //  Created by chenxiaojie on 2019/8/22.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /** App 系统相关信息 */
-@interface CJAppSystemInfo : NSObject
+@interface TXAppSystemInfo : NSObject
 
 /**
  @brief 获取当前设备手机型号
@@ -17,7 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getCurrentDeviceModel;
 
-+ (NSDictionary *)getIPAddresses;
+/*
+ @brief 获取设备当前网络IP地址
+ @return    ip 地址
+ */
++ (NSString *)getNetworkIPAddress;
 
 @end
 

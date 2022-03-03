@@ -1,5 +1,5 @@
 //
-//  DefaultTool.h
+//  TXDefaultTool.h
 //  NewEquery
 //
 //  Created by Jayden on 2017/9/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJDefaultTool : NSObject
+@interface TXDefaultTool : NSObject
 
 /**
  *  保存数据到userdefault

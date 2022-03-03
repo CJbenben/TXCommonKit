@@ -1,5 +1,5 @@
 //
-//  CJGlobalDefine.h
+//  TXGlobalDefine.h
 //  Autoyol
 //
 //  Created by chenxiaojie on 18/11/14.
@@ -7,8 +7,8 @@
 //
 #import <Foundation/Foundation.h>
 
-#ifndef CJGlobalDefine_h
-#define CJGlobalDefine_h
+#ifndef TXGlobalDefine_h
+#define TXGlobalDefine_h
 
 #pragma mark - Extern and Inline  functions 内联函数  外联函数
 /*／Atzuche_EXTERN 外联函数*/

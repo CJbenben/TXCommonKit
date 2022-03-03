@@ -1,5 +1,5 @@
 //
-//  CJPrivacyPermissionsTool.h
+//  TXPrivacyPermissionsTool.h
 //  Autoyol
 //
 //  Created by chenxioajie on 2017/7/17.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /** @brief 判断权限是否开启的相关公共类 */
-@interface CJPrivacyPermissionsTool : NSObject
+@interface TXPrivacyPermissionsTool : NSObject
 
 //************************************************** 相机、相册 **************************************************//
 /**

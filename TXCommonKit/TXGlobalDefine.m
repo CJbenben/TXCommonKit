@@ -1,12 +1,12 @@
 //
-//  CJGlobalDefine.m
+//  TXGlobalDefine.m
 //  Autoyol
 //
 //  Created by chenxiaojie on 18/11/14.
 //  Copyright (c) 2018年 chenxiaojie. All rights reserved.
 //
 
-#import "CJGlobalDefine.h"
+#import "TXGlobalDefine.h"
 
 SPHK_EXTERN id safeObjectTxAtIndex(NSArray *arr, NSInteger index)
 {

@@ -1,15 +1,15 @@
 //
-//  CJTool.h
+//  TXTool.h
 //  DP
 //
 //  Created by 笨笨编程 on 2017/7/5.
 //  Copyright © 2017年 dp. All rights reserved.
 //
 
-#ifndef CJTool_h
-#define CJTool_h
+#ifndef TXTool_h
+#define TXTool_h
 
-#endif /* CJTool_h */
+#endif /* TXTool_h */
 
 /* 隐藏键盘 */
 #define HidenKeybord {[[[UIApplication sharedApplication] keyWindow] endEditing:YES];}

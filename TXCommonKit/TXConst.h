@@ -1,16 +1,16 @@
 //
-//  CJConst.h
+//  TXConst.h
 //  Demo
 //
 //  Created by chenxiaojie on 2020/11/23.
 //  Copyright © 2020 ChenJie. All rights reserved.
 //
 
-#ifndef CJConst_h
-#define CJConst_h
+#ifndef TXConst_h
+#define TXConst_h
 
 
-#endif /* CJConst_h */
+#endif /* TXConst_h */
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 

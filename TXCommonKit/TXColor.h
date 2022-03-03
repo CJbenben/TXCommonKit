@@ -1,15 +1,15 @@
 //
-//  CJColor.h
+//  TXColor.h
 //  DP
 //
 //  Created by cxj on 17/07/05.
 //  Copyright © 2015年 笨笨编程. All rights reserved.
 //
 
-#ifndef CJColor_h
-#define CJColor_h
+#ifndef TXColor_h
+#define TXColor_h
 
-#endif /* CJColor_h */
+#endif /* TXColor_h */
 
 /* rgb 颜色值 */
 #define CJRGBCOLOR(R, G, B)               [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1]

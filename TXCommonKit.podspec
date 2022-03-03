@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "CJCommonKit"
-  spec.version      = "0.2.1"
-  spec.summary      = "This is componentization with CJCommonKit."
+  spec.name         = "TXCommonKit"
+  spec.version      = "0.2.2"
+  spec.summary      = "This is componentization with TXCommonKit."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,10 +25,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-        pod CJCommonKit private library
+        pod TXCommonKit private library
                     DESC
 
-  spec.homepage     = "https://github.com/CJbenben/CJCommonKit"
+  spec.homepage     = "https://github.com/CJbenben/TXCommonKit"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/CJbenben/CJCommonKit.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/CJbenben/TXCommonKit.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "CJCommonKit/**/*.{h,m}"
+  spec.source_files  = "TXCommonKit/**/*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"

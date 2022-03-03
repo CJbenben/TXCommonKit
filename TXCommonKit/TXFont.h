@@ -1,16 +1,16 @@
 //
-//  CJFont.h
+//  TXFont.h
 //  DP
 //
 //  Created by cxj on 17/07/05.
 //  Copyright © 2015年 笨笨编程. All rights reserved.
 //
 
-#ifndef CJFont_h
-#define CJFont_h
+#ifndef TXFont_h
+#define TXFont_h
 
 
-#endif /* CJFont_h */
+#endif /* TXFont_h */
 
 #define FONTSTYLE_PingFangSC_Light ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Light" : @"Helvetica-Light")
 #define FONTSTYLE_PingFangSC_Medium ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Medium" : @"Helvetica-Bold")

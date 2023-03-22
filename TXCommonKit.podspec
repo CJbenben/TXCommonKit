@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TXCommonKit"
-  spec.version      = "0.2.3"
+  spec.version      = "0.2.4"
   spec.summary      = "This is componentization with TXCommonKit."
 
   # This description is used to generate tags and improve search results.
